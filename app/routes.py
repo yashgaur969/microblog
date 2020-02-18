@@ -1,7 +1,7 @@
 from flask import request
 
 from app import app, db
-from app.models import User
+from app.models import User, StaticEmailTemplate
 
 
 @app.route('/profile/<username>/<email>', methods=['PUT', 'POST', 'GET', 'DELETE'])
@@ -36,3 +36,16 @@ def xyzmethod():                                                                
         app.logger.info("xyz is called")
         u = User.query.all()
         return 'user list {}'.format(u)
+
+
+@app.route('/email', methods=['PUT', 'POST', 'GET', 'DELETE'])
+def email_template():
+    if request.method == 'POST':
+        email_structure = request.get_json(force=True)
+        subject = email_structure('subject')
+        header = email_structure('header')
+        body = email_structure('body')
+        new_email_template = StaticEmailTemplate(subject=subject, header=header, body=body)
+        db.session.add(new_email_template)
+        db.session.commit()
+    return email_structure
