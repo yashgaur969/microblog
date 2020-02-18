@@ -1,29 +1,30 @@
 from flask import request
+from flask_mail import Message
 
-from app import app, db
+from app import app, db, mail
 from app.models import User, StaticEmailTemplate
 
 
 @app.route('/profile/<username>/<email>', methods=['PUT', 'POST', 'GET', 'DELETE'])
 def http_method(username, email):
-    if request.method == 'PUT':                                                  #update operation
+    if request.method == 'PUT':                                                          # update operation
         new_email = 'my_new_email@example.com'
         user = User.query.filter_by(username=username, email=email).first()
         user.email = new_email
         db.session.commit()
         return 'updated email id is ' + new_email
 
-    if request.method == 'GET':                                                   #read operation
+    if request.method == 'GET':                                                           # read operation
         user = User.query.filter_by(username=username, email=email)
         user = user.first()
         return 'email is {}'.format(user.email)
 
-    if request.method == 'DELETE':                                                 #delete operation
+    if request.method == 'DELETE':                                                         # delete operation
         user = User.query.filter_by(username=username, email=email).delete()
         db.session.commit()
         return 'success deletion with username {}'.format(username)
 
-    if request.method == 'POST':                                                  #create operation
+    if request.method == 'POST':                                                            # create operation
         u = User(username=username, email=email)
         db.session.add(u)
         db.session.commit()
@@ -31,7 +32,7 @@ def http_method(username, email):
 
 
 @app.route('/xyz', methods=['GET'])
-def xyzmethod():                                                                  #to check what all users are added in the database
+def xyzmethod():                                                                          # to check what all users are added in the database
     if request.method == 'GET':
         app.logger.info("xyz is called")
         u = User.query.all()
@@ -49,3 +50,19 @@ def email_template():
         db.session.add(new_email_template)
         db.session.commit()
     return email_structure
+
+
+@app.route('/mail', methods=['POST'])
+def index():                                                       # method to send mail to a list of users
+    if request.method == 'POST':
+        result = User.query.all()
+        emails = []
+        for r in result:
+            emails.append(r.email)
+        msg = Message('Hello', sender='yashgaur969@gmail.com', recipients=emails)
+        estruct = request.get_json(force=True)
+        msg.subject = estruct['subject']
+        msg.header = estruct['header']
+        msg.body = estruct['body']
+        mail.send(msg)
+        return "Email Sent"
