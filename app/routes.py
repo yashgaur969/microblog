@@ -24,10 +24,10 @@ def http_method(username, email):
         return 'success deletion with username {}'.format(username)
 
     if request.method == 'POST':
-        u = User(username='username', email='email')
+        u = User(username=username, email=email)
         db.session.add(u)
         db.session.commit()
-        return 'create new user with email {}'.format(username)
+        return 'create new user with email {}'.format(email)
 
 
 
