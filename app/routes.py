@@ -49,20 +49,18 @@ def email_template():
         new_email_template = StaticEmailTemplate(subject=subject, header=header, body=body)
         db.session.add(new_email_template)
         db.session.commit()
-    return email_structure
+    return new_email_template.header + new_email_template.body
 
 
-@app.route('/mail', methods=['POST'])
-def index():                                                       # method to send mail to a list of users
-    if request.method == 'POST':
-        result = User.query.all()
-        emails = []
-        for r in result:
-            emails.append(r.email)
-        msg = Message('Hello', sender='yashgaur969@gmail.com', recipients=emails)
-        estruct = request.get_json(force=True)
-        msg.subject = estruct['subject']
-        msg.header = estruct['header']
-        msg.body = estruct['body']
-        mail.send(msg)
+@app.route('/mail/<eid>', methods=['GET'])
+def index(eid):
+    if request.method == 'GET':
+        users = User.query.all()
+        template = StaticEmailTemplate.query.filter_by(eid=eid).first()
+        for r in users:
+            msg = Message(sender='yashgaur969@gmail.com', recipients=[r.email])
+            msg.body = template.header + " " + template.body
+            msg.subject = template.subject
+            msg.html = msg.body
+            mail.send(msg)
         return "Email Sent"
