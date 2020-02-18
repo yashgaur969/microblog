@@ -12,10 +12,9 @@ class User(db.Model):                                                       #use
 
 class StaticEmailTemplate(db.Model):                                 #email template class
     eid = db.Column(db.Integer, primary_key=True)
-    header = db.Column(db.String(120))
-    subject = db.Column(db.String(120))
+    subject = db.Column(db.String())
+    header = db.Column(db.String())
     body = db.Column(db.String())
-    footer = db.Column(db.String(120))
 
     def __repr__(self):
         return '<Email Template is {}>'.format(self.header + self.body)

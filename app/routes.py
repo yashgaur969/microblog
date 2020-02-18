@@ -42,9 +42,9 @@ def xyzmethod():                                                                
 def email_template():
     if request.method == 'POST':
         email_structure = request.get_json(force=True)
-        subject = email_structure('subject')
-        header = email_structure('header')
-        body = email_structure('body')
+        subject = email_structure['subject']
+        header = email_structure['header']
+        body = email_structure['body']
         new_email_template = StaticEmailTemplate(subject=subject, header=header, body=body)
         db.session.add(new_email_template)
         db.session.commit()
