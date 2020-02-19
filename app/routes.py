@@ -52,7 +52,7 @@ def email_template():
     return new_email_template.header + new_email_template.body
 
 
-@app.route('/mail/<eid>', methods=['GET'])
+@app.route('/mail/<eid>', methods=['GET'])                                                     # method to create static email template
 def index(eid):
     if request.method == 'GET':
         users = User.query.all()
@@ -67,12 +67,14 @@ def index(eid):
 
 
 @app.route('/dynamic-email', methods=['GET'])
-def dynamic_mail():
+def dynamic_mail():                                                                             #method to create dynamic email template
     if request.method == 'GET':
         users = User.query.all()
         for rr in users:
             msg = Message('Sale Offer', sender='yashgaur969@gmail.com', recipients=[rr.email])
-            msg.body = "<p>hi {}</p>".format(rr.username)
+            msg.body = "<h1>New Year Sale</h1><p>hi {}</p><p>Wish you a very happy new year. As you have done " \
+                       "shopping worth 7000 this year,we have surprise for you.</p><p>Below is a coupon for this new " \
+                       "year sale to bring more joy to in the coming year</p>".format(rr.username)
             msg.html = msg.body
             mail.send(msg)
         return "Email Sent"
