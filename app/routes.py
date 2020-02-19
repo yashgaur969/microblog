@@ -155,3 +155,38 @@ def updating_user_product_list():
             db.session.add(userproductlist)
         db.session.commit()
         return "user product list updated"
+
+
+@app.route('/customers/gender/<gender>', methods=['GET'])
+def customer_filter_using_gender(gender):
+    if request.method == 'GET':
+        filter1 = {}
+        customer = Customer.query.filter(Customer.c_gender == gender)
+        for c in customer:
+            filter1.update({c.cid: c.c_first_name})
+        return filter1
+
+
+@app.route('/customers/age/<age>', methods=['GET'])
+def customer_filter_using_age(age):
+    if request.method == 'GET':
+        filter2 = {}
+        customer = Customer.query.filter(Customer.c_age == age)
+        for c in customer:
+            filter2.update({c.cid: c.c_first_name})
+        return filter2
+
+
+@app.route('/customers/state/<state>', methods=['GET'])
+def customer_filter_using_state(state):
+    if request.method == 'GET':
+        filter3 = {}
+        customer = Customer.query.filter(Customer.c_state == state)
+        for c in customer:
+            filter3.update({c.cid: c.c_first_name})
+        return filter3
+
+
+
+
+
