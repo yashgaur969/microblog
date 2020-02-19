@@ -64,3 +64,15 @@ def index(eid):
             msg.html = msg.body
             mail.send(msg)
         return "Email Sent"
+
+
+@app.route('/dynamic-email', methods=['GET'])
+def dynamic_mail():
+    if request.method == 'GET':
+        users = User.query.all()
+        for rr in users:
+            msg = Message('Sale Offer', sender='yashgaur969@gmail.com', recipients=[rr.email])
+            msg.body = "<p>hi {}</p>".format(rr.username)
+            msg.html = msg.body
+            mail.send(msg)
+        return "Email Sent"
