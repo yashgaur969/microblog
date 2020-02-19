@@ -187,6 +187,16 @@ def customer_filter_using_state(state):
         return filter3
 
 
+# @app.route('/customers/govUser', methods=['GET'])
+# def customer_filter_using_mail():
+#     if request.method == 'GET':
+#         filter4 = {}
+#         customer = Customer.query.filter(".gov" in Customer.c_email)
+#         for c in customer:
+#             filter4.update({c.cid: c.c_first_name})
+#         return filter4
+
+
 
 
 
