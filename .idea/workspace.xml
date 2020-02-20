@@ -6,8 +6,6 @@
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/testcases.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/testcases.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +45,7 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.testcases">
+  <component name="RunManager" selected="Python.flask">
     <configuration name="flask" type="PythonConfigurationType" factoryName="Python">
       <module name="microblog" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -134,22 +132,22 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1582134279852" />
-    <state width="1830" height="338" key="GridCell.Tab.0.bottom" timestamp="1582140085572">
+    <state width="1830" height="338" key="GridCell.Tab.0.bottom" timestamp="1582174846490">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="338" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1582140085572" />
-    <state width="1830" height="338" key="GridCell.Tab.0.center" timestamp="1582140085569">
+    <state width="1830" height="338" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1582174846490" />
+    <state width="1830" height="338" key="GridCell.Tab.0.center" timestamp="1582174846487">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="338" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1582140085569" />
-    <state width="1830" height="338" key="GridCell.Tab.0.left" timestamp="1582140085568">
+    <state width="1830" height="338" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1582174846487" />
+    <state width="1830" height="338" key="GridCell.Tab.0.left" timestamp="1582174846487">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="338" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1582140085568" />
-    <state width="1830" height="338" key="GridCell.Tab.0.right" timestamp="1582140085571">
+    <state width="1830" height="338" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1582174846487" />
+    <state width="1830" height="338" key="GridCell.Tab.0.right" timestamp="1582174846488">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="338" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1582140085571" />
+    <state width="1830" height="338" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1582174846488" />
     <state width="1830" height="344" key="GridCell.Tab.1.bottom" timestamp="1582000755306">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
