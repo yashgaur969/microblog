@@ -24,19 +24,19 @@ def http_method(username, email, total_purchase_amount):
 
     if request.method == 'GET':  # read operation
         user = User.query.filter_by(username=username, email=email, total_purchase_amount=total_purchase_amount).first()
-        return 'email is' + email
+        return 'email is ' + email
 
     if request.method == 'DELETE':  # delete operation
         user = User.query.filter_by(username=username, email=email,
                                     total_purchase_amount=total_purchase_amount).delete()
         db.session.commit()
-        return 'success deletion with username {}'.format(username)
+        return 'success deletion with username {} '.format(username)
 
     if request.method == 'POST':  # create operation
         u = User(username=username, email=email, total_purchase_amount=total_purchase_amount)
         db.session.add(u)
         db.session.commit()
-        return 'create new user with email {}'.format(email)
+        return 'create new user with email {} '.format(email)
 
 
 @app.route('/email', methods=['PUT', 'POST', 'GET', 'DELETE'])
