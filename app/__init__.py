@@ -35,7 +35,7 @@ def create_app(config_name):
     return app
 
 
-app = create_app(config_name="config")
+app = create_app(config_name="testing")
 
 app.debug = True
 db = SQLAlchemy(app)

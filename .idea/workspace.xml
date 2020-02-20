@@ -4,6 +4,9 @@
     <list default="true" id="d40ea07b-5828-426b-83f1-7d4d0d1da7e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/testcases.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/testcases.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +34,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/csv" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/testcases.py" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
   </component>
@@ -44,7 +47,7 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.testcases">
     <configuration name="flask" type="PythonConfigurationType" factoryName="Python">
       <module name="microblog" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -66,6 +69,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="testcases" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="microblog" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DATABASE_URL" value="postgresql+psycopg2://blogger:password@localhost/newmicroblog1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/testcases.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.flask" />
+      <item itemvalue="Python.testcases" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -81,10 +110,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582109718462">
+    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582139050979">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1582109718462" />
+    <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1582139050979" />
     <state x="709" y="357" width="559" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581916375285">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -97,26 +126,30 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="751" y="205" key="#xdebugger.evaluate/67.27.1853.1053@67.27.1853.1053" timestamp="1581999321622" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581960054250">
+    <state x="730" y="281" width="515" height="542" key="EnvironmentVariablesDialog" timestamp="1582134325253">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1581960054250" />
-    <state width="1830" height="338" key="GridCell.Tab.0.bottom" timestamp="1582127678421">
+    <state x="730" y="281" width="515" height="542" key="EnvironmentVariablesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1582134325253" />
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1582134279852">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="338" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1582127678421" />
-    <state width="1830" height="338" key="GridCell.Tab.0.center" timestamp="1582127678420">
+    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1582134279852" />
+    <state width="1830" height="338" key="GridCell.Tab.0.bottom" timestamp="1582140085572">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="338" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1582127678420" />
-    <state width="1830" height="338" key="GridCell.Tab.0.left" timestamp="1582127678418">
+    <state width="1830" height="338" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1582140085572" />
+    <state width="1830" height="338" key="GridCell.Tab.0.center" timestamp="1582140085569">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="338" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1582127678418" />
-    <state width="1830" height="338" key="GridCell.Tab.0.right" timestamp="1582127678421">
+    <state width="1830" height="338" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1582140085569" />
+    <state width="1830" height="338" key="GridCell.Tab.0.left" timestamp="1582140085568">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="338" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1582127678421" />
+    <state width="1830" height="338" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1582140085568" />
+    <state width="1830" height="338" key="GridCell.Tab.0.right" timestamp="1582140085571">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1830" height="338" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1582140085571" />
     <state width="1830" height="344" key="GridCell.Tab.1.bottom" timestamp="1582000755306">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

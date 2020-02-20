@@ -23,7 +23,7 @@ class Config(object):
 
 class DevelopmentConfig(Config):
     """Configurations for Development."""
-    SQLALCHEMY_DATABASE_URI = 'postgres://blooger:password@localhost:5432/newmicroblog1'
+    SQLALCHEMY_DATABASE_URI = 'postgres://blogger:password@localhost:5432/newmicroblog1'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     DEBUG = True
 

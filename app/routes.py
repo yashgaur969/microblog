@@ -8,6 +8,11 @@ from app import app, db, mail
 from app.models import User, StaticEmailTemplate, UserProductList, Customer, Orders, Product, Reviews
 
 
+@app.route('/')
+def indexx():
+    return "hello world"
+
+
 @app.route('/profile/<username>/<email>', methods=['PUT', 'POST', 'GET', 'DELETE'])
 def http_method(username, email):
     if request.method == 'PUT':  # update operation
@@ -18,9 +23,8 @@ def http_method(username, email):
         return 'updated email id is ' + new_email
 
     if request.method == 'GET':  # read operation
-        user = User.query.filter_by(username=username, email=email)
-        user = user.first()
-        return 'email is {}'.format(user.email)
+        user = User.query.filter_by(username=username, email=email).first()
+        return 'email is' + email
 
     if request.method == 'DELETE':  # delete operation
         user = User.query.filter_by(username=username, email=email).delete()
@@ -186,7 +190,6 @@ def customer_filter_using_state(state):
             filter3.update({c.cid: c.c_first_name})
         return filter3
 
-
 # @app.route('/customers/govUser', methods=['GET'])
 # def customer_filter_using_mail():
 #     if request.method == 'GET':
@@ -195,8 +198,3 @@ def customer_filter_using_state(state):
 #         for c in customer:
 #             filter4.update({c.cid: c.c_first_name})
 #         return filter4
-
-
-
-
-
