@@ -22,7 +22,7 @@ class CustomerTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_customers_get(self):
-        response = self.client.get('/profile/mahesh/mahesh@gmail.com', follow_redirects=True)
+        response = self.client.get('/profile/yash/yashgaur969@gmail.com/8000', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
     def tearDown(self):

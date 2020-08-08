@@ -63,7 +63,7 @@ def static_email_to_all(eid):
             msg.subject = template.subject
             msg.html = msg.body
             mail.send(msg)
-        return "Email Sent"
+        return "Static Email Sent to the users"
 
 
 @app.route('/dynamic-email', methods=['GET'])
@@ -82,7 +82,7 @@ def dynamic_mail():  # method to create dynamic email template to send a customi
                 rr.username, rr.total_purchase_amount, rr.id)
             msg.html = msg.body  # to display the body of the mail in html format
             mail.send(msg)
-        return "Email Sent"
+        return "Dynamic Email Sent to the users"
 
 
 @app.route('/customerList', methods=['POST'])
@@ -200,10 +200,10 @@ def filter_using_gender_and_age(gender, age):  # filtering data based on gender 
 
 
 @app.route('/customers/state/age/<state>/<age>', methods=['GET'])
-def customer_filter_using_state_and_age(state, age):                 #filtering data based on state and age together in customer table
+def customer_filter_using_state_and_age(state, age):
     if request.method == 'GET':
-        filter5 = {}
-        customer = Customer.query.filter(Customer.c_state == state and Customer.c_age >= age)
+        filter5 = {}                                                              #filtering data based on state and age
+        customer = Customer.query.filter(Customer.c_state == state and Customer.c_age == age)
         for c in customer:
             filter5.update({c.cid: c.c_first_name})
         return filter5
